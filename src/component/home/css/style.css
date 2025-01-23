@@ -1,0 +1,65 @@
+.banner-home {
+  padding-top: 200px;
+  background-color: #0b6477;
+  color: #ffffff;
+  height: 50vh;
+}
+
+.banner-home-image {
+  width: 600px; 
+  margin-top: -150px;
+}
+
+@media (max-width: 768px) {
+  .banner-home-image {
+    width: 400px; 
+  }
+}
+
+.banner-home .banner-home-title {
+  font-size: 50px;
+}
+
+.banner-home .banner-home-content {
+  font-size: 30px;
+}
+
+.supplier-home {
+  background-color: #d8d8d8;
+  color: #ffffff;
+  height: 150px;
+}
+
+a.nav-link.btn.btn-outline-light.rounded-pill:hover {
+  color: black !important;
+}
+
+.image-supplier-container {
+  text-align: center;
+}
+
+.image-supplier-container img {
+  margin: 0 auto;
+}
+
+.info-card-home {
+  padding-top: 50px;
+}
+
+.card-home:hover {
+  margin-top: -10px;
+  transition: margin-top 0.3s ease-in-out;
+}
+
+.container-xxl {
+  max-width: 1440px !important;
+}
+
+.analytics-home {
+  padding-top: 100px;
+}
+
+.footer-home {
+  background-color: #0b6477;
+  color: #ffffff;
+}
