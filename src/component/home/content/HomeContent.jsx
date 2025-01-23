@@ -14,17 +14,12 @@ const HomeContent = () => {
       <nav className="main-header navbar navbar-expand-md navbar-light navbar-white border-bottom-0">
         <div className="container">
           <a href="#" className="navbar-brand" style={{ color: '#ffffff', fontSize: '30px' }}>
-            <span className="brand-image" style={{ marginTop: "5px", marginLeft: "15px" }}><b>MB</b> </span>
-            <span className="brand-text font-weight-light">MedBank </span>
+            <span className="brand-image" style={{ marginTop: "5px", marginLeft: "15px" }}><b>W</b></span>
+            <span className="brand-text font-weight-light">elcome</span>
           </a>
 
-          <button className="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" 
-            style={{color: '#ffffff', borderColor: '#ffffff'}}>
-            <span className="fa fa-bars"></span>
-          </button>
-
           <div className="collapse navbar-collapse order-3" id="navbarCollapse" style={{ color: '#ffffff', fontSize: '20px' }}>
-            <form className="form-inline ml-0 ml-md-3">
+            {/* <form className="form-inline ml-0 ml-md-3">
               <div className="input-group input-group-sm">
                 <input className="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search" />
                 <div className="input-group-append">
@@ -33,14 +28,20 @@ const HomeContent = () => {
                   </button>
                 </div>
               </div>
-            </form>
+            </form> */}
             
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item" style={{ marginRight: '10px' }}>
-                <a href="/login" className="nav-link btn btn-outline-light rounded-pill" style={{ color: '#ffffff' }}>Login</a>
+              <li className="nav-item d-none d-sm-inline-block">
+                <a href="#" className="nav-link" style={{ color: '#ffffff' }}>Home</a>
               </li>
+              <li className="nav-item d-none d-sm-inline-block">
+                <a href="#" className="nav-link" style={{ color: '#ffffff' }}>Works</a>
+              </li>
+              {/* <li className="nav-item" style={{ marginRight: '10px' }}>
+                <a href="/login" className="nav-link btn btn-outline-light rounded-pill" style={{ color: '#ffffff' }}>Login</a>
+              </li> */}
               <li className="nav-item">
-                <a href="#" className="nav-link btn btn-primary rounded-pill" style={{ color: '#ffffff' }}>Request a business account</a>
+                <a href="#" className="nav-link btn btn-primary rounded-pill" style={{ color: '#ffffff' }}>LET'S BUILD SOMETHING</a>
               </li>
             </ul>
           </div>
@@ -53,16 +54,26 @@ const HomeContent = () => {
           <div className="content">
             <div className="container">
               <div className="row">
-                <div className="col-lg-6">
-                  <div className="banner-home-title"><b>M</b>ed<b>B</b>ank</div>
+                <div className="col-lg-6" style={{paddingTop: '50px'}}>
+                  <div className="banner-home-title">Hi!</div>
                   <div className="banner-home-content">
-                    Your Trusted Partner for Healthcare Solutions
+                    My name is Alvin Jake Pabuaya
                   </div>
-                  <div style={{ fontSize: '20px', marginBottom: '30px'}}>Improving Patient Outcomes: Your Partner in Delivering Exceptional Care, Anywhere.</div>
-                  <a href="#" className="btn btn-primary rounded-pill" style={{ color: '#ffffff', fontSize: '20px', padding: '20px' }}>Request a business account</a>
+                  <div style={{ fontSize: '20px', marginBottom: '30px'}}>I'm a full stack web developer specializing in building web applications using JavaScript, ReactJS, Node.js and Kubernetes</div>
+                  <a 
+                    href="#about-me" 
+                    className="btn btn-primary rounded-pill" 
+                    style={{ color: '#ffffff', fontSize: '20px', padding: '20px' }}
+                    onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      document.getElementById('about-me').scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  >
+                    Find out more
+                  </a>
                 </div>
                 <div className="col-lg-6">
-                  <img src="/images/banner-img.png" className="banner-home-image" />
+                  <img src="/images/jake.png" className="banner-home-image" />
                 </div>
               </div>
             </div>
@@ -73,18 +84,58 @@ const HomeContent = () => {
           <div className="container" style={{ paddingTop: '20px' }}>
             <div className="row">
               <div className="col-md-3 image-supplier-container">
-                <img src="/images/partners/doh.png" width="100" alt="Image 1" />
+                {/* <img src="/images/partners/doh.png" width="100" alt="Image 1" /> */}
               </div>
               <div className="col-md-3 image-supplier-container">
-                <img src="/images/partners/hospital1.png" width="100" alt="Image 2" />
+                <img src="/images/citygov.png" width="100" alt="Image 2" className="grayscale-image" />
               </div>
               <div className="col-md-3 image-supplier-container">
-                <img src="/images/partners/hospital2.png" width="100" alt="Image 3" />
+                <img src="/images/r-residencia-logo.png" width="100" alt="Image 3" className="grayscale-image" />
               </div>
               <div className="col-md-3 image-supplier-container">
-                <img src="/images/partners/doh.png" width="100" alt="Image 1" />
+                {/* <img src="/images/partners/doh.png" width="100" alt="Image 1" /> */}
               </div>
             </div>   
+          </div>
+        </div>
+
+        <div className="about-me" id="about-me">
+          <div className="container" style={{ paddingTop: '100px' }}>
+            <center> <h1><strong>ABOUT</strong></h1> </center>
+            <p style={{ fontSize: '20px', marginLeft: '200px', marginRight: '200px' }}>
+              I am a Full Stack Web Developer with 9+ years of experience in designing, developing, and maintaining robust and scalable web applications. Expertise in full-stack development, with a strong focus on cloud-native architectures. Proficient in Kubernetes for container orchestration and Git for efficient version control. Deep understanding of Single Sign-On (SSO) principles and hands-on experience with Hydra. Passionate about CI/CD best practices and implementing automated pipelines for streamlined software delivery.
+            </p>
+          </div>
+        </div>
+
+        <div className="skills-experience">
+          <div className="container" style={{ paddingTop: '100px' }}>
+            <div className="card">
+              <div className="card-header p-2">
+                <ul className="nav nav-pills d-flex justify-content-center">
+                  <li className="nav-item">
+                    <a className="nav-link active" href="#activity" data-toggle="tab">
+                      Skills
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#timeline" data-toggle="tab">
+                      Experience
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className="card-body">
+                <div className="tab-content">
+                  <div className="active tab-pane" id="activity">
+                    {/* Skills content goes here */}
+                  </div>
+                  <div className="tab-pane" id="timeline">
+                    {/* Experience content goes here */}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

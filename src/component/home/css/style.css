@@ -2,12 +2,16 @@
   padding-top: 200px;
   background-color: #0b6477;
   color: #ffffff;
-  height: 50vh;
+  height: 73vh;
+  position: relative; /* Ensure the container is positioned correctly */
+  overflow: hidden; /* Hide any overflowing parts of the image */
 }
 
 .banner-home-image {
-  width: 600px; 
-  margin-top: -150px;
+  width: 750px; /* Keep your specified width */
+  object-fit: cover; /* Crop the image to fit the container */
+  object-position: center; /* Center the image within the container */
+  margin-top: -60px; /* Keep your existing margin */
 }
 
 @media (max-width: 768px) {
@@ -25,7 +29,7 @@
 }
 
 .supplier-home {
-  background-color: #d8d8d8;
+  background-color: #ebe9e9;
   color: #ffffff;
   height: 150px;
 }
@@ -42,7 +46,17 @@ a.nav-link.btn.btn-outline-light.rounded-pill:hover {
   margin: 0 auto;
 }
 
+.about-me {
+  height: 500px;
+}
+
+.skills-experience {
+  height: 500px;
+  background-color: #ebe9e9;
+}
+
 .info-card-home {
+  height: 400px;
   padding-top: 50px;
 }
 
@@ -57,9 +71,19 @@ a.nav-link.btn.btn-outline-light.rounded-pill:hover {
 
 .analytics-home {
   padding-top: 100px;
-}
+}container-xxl
 
 .footer-home {
   background-color: #0b6477;
   color: #ffffff;
+}
+
+.grayscale-image {
+  filter: grayscale(100%);
+}
+
+.card-header .nav-pills {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Adds space between the tabs */
 }
