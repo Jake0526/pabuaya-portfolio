@@ -12,7 +12,7 @@ export default class HomeComponent extends Component {
 	componentDidMount() {
     executeScript();
 
-    document.title = "Home"
+    document.title = "Welcome"
 
     document.body.className = "hold-transition layout-top-nav layout-navbar-fixed";
     document.body.style = `

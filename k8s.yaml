@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pabuaya-portfolio-production
+  labels:
+    app: pabuaya-portfolio-production
+spec:
+  selector:
+    app: pabuaya-portfolio-production
+  ports:
+    - port: 80
+      targetPort: 80
+  type: LoadBalancer
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pabuaya-portfolio-production
+  labels:
+    app: pabuaya-portfolio-production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pabuaya-portfolio-production
+  template:
+    metadata:
+      labels:
+        app: pabuaya-portfolio-production
+    spec:
+      containers:
+      - name: pabuaya-portfolio-production
+        image: jake0526/pabuaya-portfolio:production
+        imagePullPolicy: Always
+        env:
+        - name: ROOT_URL
+          value: https://ajpdev.dev/
+        - name: MONGO_URL
+          value: mongodb+srv://jake0526:4TakgQDYd83peW35@ajp-db-cluster.tcm96.mongodb.net/rresidence?retryWrites=true&w=majority&appName=ajp-db-cluster
+        - name: METEOR_SETTINGS
+          value: $METEOR_SETTINGS_PRODUCTION
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: jakedockerhub
+      volumes: null

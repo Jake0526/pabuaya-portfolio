@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node server",
+    "deploy": "./deployment-script.sh",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
