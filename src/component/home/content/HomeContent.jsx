@@ -76,7 +76,7 @@ const HomeContent = () => {
           <div className="content">
             <div className="container">
               <div className="row">
-                <div className="col-lg-6" style={{paddingTop: '50px'}}>
+                <div className="col-lg-6 col-sm-12" style={{paddingTop: '50px'}}>
                   <div className="banner-home-title">Hi!</div>
                   <div className="banner-home-content">
                     My name is Alvin Jake Pabuaya
@@ -94,7 +94,7 @@ const HomeContent = () => {
                     Find out more
                   </a>
                 </div>
-                <div className="col-lg-6">
+                <div className="col-lg-6 col-sm-12">
                   <img src="/images/jake.png" className="banner-home-image" />
                 </div>
               </div>
@@ -103,7 +103,7 @@ const HomeContent = () => {
         </div>
 
         <div className="supplier-home">
-          <div className="container" style={{ paddingTop: '20px' }}>
+          <div className="container">
             <div className="row">
               <div className="col-md-3 image-supplier-container">
                 {/* <img src="/images/partners/doh.png" width="100" alt="Image 1" /> */}
@@ -122,9 +122,9 @@ const HomeContent = () => {
         </div>
 
         <div className="about-me" id="about-me">
-          <div className="container" style={{ paddingTop: '100px' }}>
+          <div className="container">
             <center> <h1><strong>ABOUT</strong></h1> </center>
-            <p style={{ fontSize: '20px', marginLeft: '200px', marginRight: '200px' }}>
+            <p style={{ fontSize: '20px' }}>
               I am a Full Stack Web Developer with 9+ years of experience in designing, developing, and maintaining robust and scalable web applications. Expertise in full-stack development, with a strong focus on cloud-native architectures. Proficient in Kubernetes for container orchestration and Git for efficient version control. Deep understanding of Single Sign-On (SSO) principles and hands-on experience with Hydra. Passionate about CI/CD best practices and implementing automated pipelines for streamlined software delivery.
             </p>
           </div>
@@ -136,12 +136,12 @@ const HomeContent = () => {
               <div className="card-header p-2">
                 <ul className="nav nav-pills d-flex justify-content-center">
                   <li className="nav-item">
-                    <a className="nav-link active" href="#activity" data-toggle="tab">
+                    <a className="nav-link active" href="#skills" data-toggle="tab">
                       Skills
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#timeline" data-toggle="tab">
+                    <a className="nav-link" href="#experience" data-toggle="tab">
                       Experience
                     </a>
                   </li>
@@ -149,7 +149,7 @@ const HomeContent = () => {
               </div>
               <div className="card-body">
                 <div className="tab-content">
-                  <div className="active tab-pane" id="activity">
+                  <div className="active tab-pane" id="skills">
                     <div className="row">
                       <div className="col-6 col-md-3 text-center">
                         <input type="text" className="knob" value="90" data-width="100" data-height="100" data-fgColor="#3c8dbc"/>
@@ -208,7 +208,7 @@ const HomeContent = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="tab-pane" id="timeline">
+                  <div className="tab-pane" id="experience">
                     <div className="timeline timeline-inverse">
                     <div className="time-label">
                         <span className="bg-success">
@@ -393,8 +393,7 @@ const HomeContent = () => {
             <center> <h1><strong>WORK</strong></h1> </center>
             
             <div className="row" style={{ paddingTop: '30px' }}>
-              <div className="col-6">
-                <h3 className="d-inline-block d-sm-none">R Residencia</h3>
+              <div className="col-lg-6">
                 <div className="col-12">
                   <img src={rresidenceImage} className="product-image" alt="RResidence"/>
                 </div>
@@ -411,7 +410,7 @@ const HomeContent = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-6">
+              <div className="col-lg-6">
                 <h3 className="my-3">R Residencia</h3>
                 <p>RResidence Website is a comprehensive online platform that provides clients with detailed information about the property, enabling them to make reservations directly. The website also features an intuitive admin panel for managing reservations, visualizing key data through interactive graphics, tracking sales performance, and generating comprehensive reports.</p>
 
@@ -436,13 +435,13 @@ const HomeContent = () => {
             </div>
 
             <div className="row" style={{ paddingTop: '30px' }}>
-              <div className="col-6">
+              <div className="col-lg-6">
                 <h3 className="d-inline-block d-sm-none">City Government of Davao (HRMIS-ePays)</h3>
                 <div className="col-12">
                   <img src="/images/work/hrmis.jpg" className="product-image" alt="RResidence"/>
                 </div>
               </div>
-              <div className="col-6">
+              <div className="col-lg-6">
                 <h3 className="my-3">City Government of Davao (HRMIS-ePays)</h3>
                 <p>HRMIS-ePays is a human resource management information system and electronic payroll system designed to automate all processes related to personnel management and payroll. It employs a microservices architecture utilizing MeteorJS, ReactJS, MariaDB, and Kubernetes.</p>
 
@@ -471,7 +470,7 @@ const HomeContent = () => {
             
             <div className="card">
               <div className="card-body row">
-                <div className="col-5 text-center d-flex align-items-center justify-content-center">
+                <div className="col-lg-5 text-center d-flex align-items-center justify-content-center">
                   <div className="">
                     <h2>C<strong>ontacts</strong></h2>
                     <p className="lead mb-5">
@@ -482,7 +481,7 @@ const HomeContent = () => {
 
                   </div>
                 </div>
-                <div className="col-7">
+                <div className="col-lg-7">
                   <div className="form-group">
                     <label for="budget">What's the budget for your project?</label>
                     <select className="custom-select form-control-border" id="budget">
