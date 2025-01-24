@@ -103,9 +103,13 @@ a.nav-link.btn.btn-outline-light.rounded-pill:hover {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .banner-home {
     padding-top: 50px;
+  }
+
+  .banner-home-image {
+    display: none;
   }
 
   .about-me {
