@@ -532,12 +532,14 @@ const HomeContent = () => {
               <strong><i className="fas fa-book mr-1"></i> Alvin Jake Pabuaya</strong>
 
               <p>
-                +639392478355
+                +639392478355 <br/>
+                pabuaya34@gmail.com
               </p>
             </div>
-            <div className="col-12 col-md-6">
+            {/* <div className="col-12 col-md-6">
               <strong><i className="fas fa-book mr-1"></i> Socials</strong>
-            </div>
+
+            </div> */}
           </div>
         </div>
       </footer>
