@@ -1,6 +1,8 @@
 /* eslint-disable no-nested-ternary */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+
+import { useForm } from "react-hook-form";
 
 import { executeScript } from '../script/script.js';
 
@@ -10,6 +12,26 @@ const HomeContent = () => {
   }, []);
 
   const [rresidenceImage, setRresidenceImage] = useState("/images/work/rresidence1.jpg");
+
+  let sendMessage = useRef(null);
+
+  const { 
+    register: registerSendMessage, 
+    handleSubmit: handleSubmitSendMessage, 
+    setValue: setValueSendMessage,
+    clearErrors: clearErrorsSendMessage,
+    formState: { errors: sendMessageError }
+  } = useForm();
+
+  const onSubmitSendMessage = (data, e) => {
+    console.log('data: ', data);
+  }
+
+  const onSubmitSendMessageError = (error, e) => {
+    console.log("Error Insert");
+    console.log(error);
+  };
+
 
   return (
     <div className="wrapper">
@@ -467,56 +489,99 @@ const HomeContent = () => {
         <div className="lets-build" id="lets-build" style={{ paddingTop: '50px', paddingBottom: '50px' }}>
           <div className="container">
             <center> <h1><strong>LET'S BUILD SOMETHING</strong></h1> </center>
-            
-            <div className="card">
-              <div className="card-body row">
-                <div className="col-lg-5 text-center d-flex align-items-center justify-content-center">
-                  <div className="">
-                    <h2>C<strong>ontacts</strong></h2>
-                    <p className="lead mb-5">
-                      Email: pabuaya34@gmail.com<br/>
-                      Phone: +639392478355<br/>
-                      LinkedIn: <a href="https://www.linkedin.com/in/alvin-jake-pabuaya-651bb8bb/" target='_blank'>Alvin Jake Pabuaya</a><br/>
-                    </p>
+            <form className="grid-form" ref={sendMessage} onSubmit={handleSubmitSendMessage(onSubmitSendMessage, onSubmitSendMessageError)}>
+              <div className="card">
+                <div className="card-body row">
+                  <div className="col-lg-5 text-center d-flex align-items-center justify-content-center">
+                    <div className="">
+                      <h2>C<strong>ontacts</strong></h2>
+                      <p className="lead mb-5">
+                        Email: pabuaya34@gmail.com<br/>
+                        Phone: +639392478355<br/>
+                        LinkedIn: <a href="https://www.linkedin.com/in/alvin-jake-pabuaya-651bb8bb/" target='_blank'>Alvin Jake Pabuaya</a><br/>
+                      </p>
 
+                    </div>
                   </div>
-                </div>
-                <div className="col-lg-7">
-                  <div className="form-group">
-                    <label for="budget">What's the budget for your project?</label>
-                    <select className="custom-select form-control-border" id="budget">
-                      <option>Less than $300 (Fixing a bug, simple on pager, ...)</option>
-                      <option>$300 - $900 (Website, Dashboard, ...)</option>
-                      <option>$900 - $1800 (Web Application)</option>
-                    </select>
-                  </div>
-                  <div className="form-group">
-                    <label for="projectDuration">When do you need this project completed</label>
-                    <select className="custom-select form-control-border" id="projectDuration">
-                      <option>1 - 2 months</option>
-                      <option>2 - 3 months</option>
-                      <option>3 - 6 months</option>
-                      <option>6 months+</option>
-                    </select>
-                  </div>
-                  <div className="form-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" className="form-control" />
-                  </div>
-                  <div className="form-group">
-                    <label for="emailAddress">EMail</label>
-                    <input type="email" id="emailAddress" className="form-control" />
-                  </div>
-                  <div className="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" className="form-control" rows="4"></textarea>
-                  </div>
-                  <div className="form-group">
-                    <input type="submit" className="btn btn-primary" value="Send"/>
+                  <div className="col-lg-7">
+                    <div className="form-group">
+                      <label htmlFor="budget">What's the budget for your project?</label>
+                      <select className="custom-select form-control-border" id="budget">
+                        <option>Less than $300 (Fixing a bug, simple on pager, ...)</option>
+                        <option>$300 - $900 (Website, Dashboard, ...)</option>
+                        <option>$900 - $1800 (Web Application)</option>
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="projectDuration">When do you need this project completed</label>
+                      <select className="custom-select form-control-border" id="projectDuration">
+                        <option>1 - 2 months</option>
+                        <option>2 - 3 months</option>
+                        <option>3 - 6 months</option>
+                        <option>6 months+</option>
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="fullName">
+                        Full Name
+                        {sendMessageError.fullName && sendMessageError.fullName.type === "required" && (
+                          <span className="error-label"> ({sendMessageError.fullName.message})</span>
+                        )}
+                      </label>
+                      <input 
+                        type="text" 
+                        id="fullName" 
+                        className="form-control"
+                        {...registerSendMessage("fullName", {
+                          required: {
+                              value: true, 
+                              message: "Required"
+                          }
+                        })} />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="emailAddress">
+                        Email
+                        {sendMessageError.email && sendMessageError.email.type === "required" && (
+                          <span className="error-label"> ({sendMessageError.email.message})</span>
+                        )}
+                      </label>
+                      <input 
+                        type="email" 
+                        id="emailAddress" 
+                        className="form-control"
+                        {...registerSendMessage("email", {
+                          required: {
+                              value: true, 
+                              message: "Required"
+                          }
+                        })} />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="message">
+                        Message
+                        {sendMessageError.message && sendMessageError.message.type === "required" && (
+                          <span className="error-label"> ({sendMessageError.message.message})</span>
+                        )}
+                      </label>
+                      <textarea 
+                        id="message" 
+                        className="form-control" 
+                        rows="4"
+                        {...registerSendMessage("message", {
+                          required: {
+                              value: true, 
+                              message: "Required"
+                          }
+                        })}></textarea>
+                    </div>
+                    <div className="form-group">
+                      <input type="submit" className="btn btn-primary" value="Send"/>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
 
