@@ -78,7 +78,7 @@ const LoginContent = ({
     <>
       <div className="card card-outline card-primary card-fade">
         <div className="card-header text-center">
-          <a href="/" className="h1"><b>M</b>ed<b>B</b>ank</a>
+          <a href="/" className="h1"><b>AJP</b> Portfolio</a>
         </div>
         <div className="card-body">
           <p className="login-box-msg">Sign in to start your session</p>
