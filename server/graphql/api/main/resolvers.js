@@ -1,7 +1,7 @@
 import db from "../../data/collection.js";
 
-function findParentCategory(categories, parentId) {
-  for (const category of categories) {
+function findParentCategory(messages, parentId) {
+  for (const category of messages) {
     if (category._id.toString() === parentId.toString()) {
       return category;
     } else if (category.subCategories.length > 0) {
@@ -21,32 +21,8 @@ const resolvers = {
 
       return users.find().toArray();
     },
-    async categories(obj, args) {
-      const categories = await db.collection("categories").find().toArray();
-
-      const categoriesT = [];
-      categories.forEach(category => {
-        categoriesT.push({
-          ...category,
-          subCategories: []
-        });
-      });
-
-      const structuredCategories = [];
-      categoriesT.forEach(category => {
-        if (!category.parentID) {
-          // Top-level category
-          structuredCategories.push(category);
-        } else {
-          // Find the parent category recursively
-          const parentCategory = findParentCategory(structuredCategories, category.parentID);
-          if (parentCategory) {
-            parentCategory.subCategories.push(category);
-          }
-        }
-      });
-
-      return structuredCategories;
+    async messages(obj, args) {
+      return await db.collection("messages").find().toArray();
     },
   },
 };

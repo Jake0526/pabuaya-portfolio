@@ -4,9 +4,11 @@ import { ApolloProvider, ApolloClient, InMemoryCache, ApolloLink } from '@apollo
 import { HttpLink } from 'apollo-link-http';
 import CryptoJS from 'crypto-js';
 
-import HomeContent from './content/HomeContent.jsx';
+import HeaderContent from '../adminlte-common/HeaderContent.jsx';
+import MenuContent from '../adminlte-common/MenuContent.jsx';
+import FooterContent from '../adminlte-common/FooterContent.jsx';
 
-import { executeScript } from './script/script.js';
+import DashboardContent from './content/DashboardContent.jsx';
 
 const responseLink = new ApolloLink((operation, forward) => {
   return forward(operation).map((response) => {
@@ -43,27 +45,30 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-export default class HomeComponent extends Component {
+export default class DashboardComponent extends Component {
 	constructor(props) {
     super(props);
   }
 
 	componentDidMount() {
-    executeScript();
-
-    document.title = "Welcome to AJP website"
-
-    document.body.className = "hold-transition layout-top-nav layout-navbar-fixed";
-    document.body.style = `
-    height: auto;`;
+    document.title = "AJP - Dashboard"
+    document.body.className = "sidebar-mini layout-fixed layout-footer-fixed control-sidebar-slide-open layout-navbar-fixed";
   }
 
 	render() {
 		return (
       <>
-        <ApolloProvider client={client}>
-          <HomeContent />
-        </ApolloProvider>
+        <div className="wrapper">
+          
+          <ApolloProvider client={client}>
+            <HeaderContent />
+
+            <MenuContent page="dashboard" state={{ name: "Jake" }} />
+            <DashboardContent props={this.props.state} />
+
+            <FooterContent />
+          </ApolloProvider>
+        </div>
       </>
 		);
 	}

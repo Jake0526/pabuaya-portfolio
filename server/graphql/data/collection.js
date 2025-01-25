@@ -17,12 +17,12 @@ try {
   // Connect the client to the server
   await client.connect();
   // Send a ping to confirm a successful connection
-  await client.db("medbank").command({ ping: 1 });
+  await client.db("ajp-portfolio").command({ ping: 1 });
   console.log("You successfully connected to MongoDB!");
 } catch (err) {
   console.error(err);
 }
 
-let db = client.db("medbank");
+let db = client.db("ajp-portfolio");
 
 export default db;

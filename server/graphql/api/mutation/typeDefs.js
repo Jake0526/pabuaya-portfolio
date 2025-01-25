@@ -5,7 +5,7 @@ const typeDefs = gql`
       createUser(input: InputUser!): InsertQueryResponse
       updateUser(input: InputUser!): InsertQueryResponse
       deleteUser(_id: String): UpdateDeleteQueryResponse
-      createCategory(input: InputCategory!): InsertQueryResponse
+      createMessage(input: InputMessage!): InsertQueryResponse
     }
 
     type InsertQueryResponse {
@@ -32,13 +32,13 @@ const typeDefs = gql`
       updatedBy: String
     }
 
-    input InputCategory {
+    input InputMessage {
       _id: String
-      name: String
-      parentID: String
-      isActive: Boolean
-      photo: String
-      video: String
+      budget: String
+      targetCompletion: String
+      fullName: String
+      email: String
+      message: String
       createdAt: String
       createdBy: String
       updatedAt: String

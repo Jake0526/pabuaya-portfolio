@@ -8,7 +8,7 @@ import HeaderContent from '../adminlte-common/HeaderContent.jsx';
 import MenuContent from '../adminlte-common/MenuContent.jsx';
 import FooterContent from '../adminlte-common/FooterContent.jsx';
 
-import CatalogContent from './content/CatalogContent.jsx';
+import MessagesContent from './content/MessagesContent.jsx';
 
 const responseLink = new ApolloLink((operation, forward) => {
   return forward(operation).map((response) => {
@@ -45,13 +45,13 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-export default class CatalogComponent extends Component {
+export default class DashboardComponent extends Component {
 	constructor(props) {
     super(props);
   }
 
 	componentDidMount() {
-    document.title = "Catalog"
+    document.title = "AJP - Messages"
     document.body.className = "sidebar-mini layout-fixed layout-footer-fixed control-sidebar-slide-open layout-navbar-fixed";
   }
 
@@ -63,8 +63,8 @@ export default class CatalogComponent extends Component {
           <ApolloProvider client={client}>
             <HeaderContent />
 
-            <MenuContent page="catalog" state={{ name: "Jake" }} />
-            <CatalogContent props={this.props.state} />
+            <MenuContent page="messages" state={{ name: "Jake" }} />
+            <MessagesContent props={this.props.state} />
 
             <FooterContent />
           </ApolloProvider>

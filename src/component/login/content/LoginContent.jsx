@@ -48,9 +48,7 @@ const LoginContent = ({
           title: 'Incorrect username or password.'
         })
       } else {
-        if (loginResponse.data.client.type === 'customer') {
-          window.location.href = '/customer/catalog';
-        }
+        window.location.href = '/admin';
       }
     } catch (error) {
       var Toast = Swal.mixin({

@@ -1,15 +1,28 @@
 /* eslint-disable no-nested-ternary */
 import React, { useEffect, useState, useRef } from 'react';
+import { gql, useQuery, useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
-
 import { useForm } from "react-hook-form";
+import Swal from 'sweetalert2';
 
 import { executeScript } from '../script/script.js';
+
+const createMessagesQuery = gql`
+mutation CreateMessage($input: InputMessage!) {
+  createMessage(input: $input) {
+    message
+    status
+    insertedID
+  }
+}
+`;
 
 const HomeContent = () => {
   useEffect(() => {
     executeScript();
   }, []);
+
+  const [createMessagesMutation, createMessagesResult] = useMutation(createMessagesQuery);
 
   const [rresidenceImage, setRresidenceImage] = useState("/images/work/rresidence1.jpg");
 
@@ -24,7 +37,31 @@ const HomeContent = () => {
   } = useForm();
 
   const onSubmitSendMessage = (data, e) => {
-    console.log('data: ', data);
+    createMessagesMutation({
+      variables: {
+        input: data,
+      },
+    }).then(({ data }) => {
+      const result = data.createMessage;
+
+      var Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+      });
+
+      Toast.fire({
+        icon: 'success',
+        title: "Thank you for reaching out! I appreciate you sharing your project details. I'll be in contact soon to discuss your needs further. Have a wonderful day!"
+      })
+
+      setValueSendMessage('budget', 'Less than $300 (Fixing a bug, simple on pager, ...)');
+      setValueSendMessage('targetCompletion', '1 - 2 months');
+      setValueSendMessage('fullName', '');
+      setValueSendMessage('email', '');
+      setValueSendMessage('message', '');
+    });
   }
 
   const onSubmitSendMessageError = (error, e) => {
@@ -506,19 +543,23 @@ const HomeContent = () => {
                   <div className="col-lg-7">
                     <div className="form-group">
                       <label htmlFor="budget">What's the budget for your project?</label>
-                      <select className="custom-select form-control-border" id="budget">
-                        <option>Less than $300 (Fixing a bug, simple on pager, ...)</option>
-                        <option>$300 - $900 (Website, Dashboard, ...)</option>
-                        <option>$900 - $1800 (Web Application)</option>
+                      <select className="custom-select form-control-border" id="budget"
+                        {...registerSendMessage("budget")}
+                      >
+                        <option value="Less than $300 (Fixing a bug, simple on pager, ...)">Less than $300 (Fixing a bug, simple on pager, ...)</option>
+                        <option value="$300 - $900 (Website, Dashboard, ...)">$300 - $900 (Website, Dashboard, ...)</option>
+                        <option value="$900 - $1800 (Web Application)">$900 - $1800 (Web Application)</option>
                       </select>
                     </div>
                     <div className="form-group">
                       <label htmlFor="projectDuration">When do you need this project completed</label>
-                      <select className="custom-select form-control-border" id="projectDuration">
-                        <option>1 - 2 months</option>
-                        <option>2 - 3 months</option>
-                        <option>3 - 6 months</option>
-                        <option>6 months+</option>
+                      <select className="custom-select form-control-border" id="projectDuration"
+                        {...registerSendMessage("targetCompletion")}
+                      >
+                        <option value="1 - 2 months">1 - 2 months</option>
+                        <option value="2 - 3 months">2 - 3 months</option>
+                        <option value="3 - 6 months">3 - 6 months</option>
+                        <option value="6 months+">6 months+</option>
                       </select>
                     </div>
                     <div className="form-group">
@@ -531,7 +572,7 @@ const HomeContent = () => {
                       <input 
                         type="text" 
                         id="fullName" 
-                        className="form-control"
+                        className={`form-control ${sendMessageError.fullName && sendMessageError.fullName.type === "required" ? 'is-invalid' : ''}`} 
                         {...registerSendMessage("fullName", {
                           required: {
                               value: true, 
@@ -549,7 +590,7 @@ const HomeContent = () => {
                       <input 
                         type="email" 
                         id="emailAddress" 
-                        className="form-control"
+                        className={`form-control ${sendMessageError.email && sendMessageError.email.type === "required" ? 'is-invalid' : ''}`} 
                         {...registerSendMessage("email", {
                           required: {
                               value: true, 
@@ -566,7 +607,7 @@ const HomeContent = () => {
                       </label>
                       <textarea 
                         id="message" 
-                        className="form-control" 
+                        className={`form-control ${sendMessageError.message && sendMessageError.message.type === "required" ? 'is-invalid' : ''}`} 
                         rows="4"
                         {...registerSendMessage("message", {
                           required: {

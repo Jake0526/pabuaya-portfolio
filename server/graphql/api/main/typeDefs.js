@@ -3,7 +3,7 @@ import { gql } from 'apollo-server-express';
 const typeDefs = gql`
   extend type Query {
     users: [User]
-    categories: [Category]
+    messages: [Message]
   }
 
   type User {
@@ -18,14 +18,13 @@ const typeDefs = gql`
     updatedBy: String
   }
 
-  type Category {
+  type Message {
     _id: String
-    name: String
-    parentID: String
-    isActive: Boolean
-    photo: String
-    video: String
-    subCategories: [Category]
+    budget: String
+    targetCompletion: String
+    fullName: String
+    email: String
+    message: String
     createdAt: String
     createdBy: String
     updatedAt: String

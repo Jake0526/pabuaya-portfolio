@@ -79,8 +79,8 @@ const resolvers = {
 
       return result;
     },
-    async createCategory(obj, args) {
-      const categories = await db.collection("categories");
+    async createMessage(obj, args) {
+      const messages = await db.collection("messages");
 
       const result = {
         message: '',
@@ -89,18 +89,18 @@ const resolvers = {
       };
 
       const create = {
-        name: args.input.name ? args.input.name : '',
-        parentID: args.input.parentID ? new ObjectId(args.input.parentID) : null,
-        isActive: args.input.isActive ? args.input.isActive : false,
-        photo: args.input.photo ? args.input.photo : '',
-        video: args.input.video ? args.input.video : '',
+        budget: args.input.budget ? args.input.budget : '',
+        targetCompletion: args.input.targetCompletion ? args.input.targetCompletion : '',
+        fullName: args.input.fullName ? args.input.fullName : '',
+        email: args.input.email ? args.input.email : '',
+        message: args.input.message ? args.input.message : '',
         createdAt: args.input.createdAt ? args.input.createdAt : '',
         createdBy: args.input.createdBy ? args.input.createdBy : '',
         updatedAt: args.input.updatedAt ? args.input.updatedAt : '',
         updatedBy: args.input.updatedBy ? args.input.updatedBy : '',
       };
 
-      const { insertedId } = await categories.insertOne({
+      const { insertedId } = await messages.insertOne({
         ...create,
         createdAt: moment().format('YYYY-MM-DD HH:mm:ss'),
         updatedAt: moment().format('YYYY-MM-DD HH:mm:ss'),

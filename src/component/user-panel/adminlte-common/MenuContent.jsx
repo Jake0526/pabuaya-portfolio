@@ -9,12 +9,14 @@ const MenuContent = ({
 
   }, []);
 
+  console.log('process.env: ', process.env);
+
   return (
     <aside className="main-sidebar fixed sidebar-dark-primary elevation-4">
       <a href="/" className="brand-link">
         {/* <img src="/images/others/r-residencia-logo-white.png" alt="AdminLTE Logo" className="brand-image img-circle elevation-3" style={{opacity: ".8"}} /> */}
-        <span className="brand-image" style={{ marginTop: "7px", marginLeft: "15px" }}><b>MB</b> </span>
-        <span className="brand-text font-weight-light">MedBank <span className="badge bg-success">v0.0.1</span> </span>
+        <span className="brand-image" style={{ marginTop: "7px", marginLeft: "15px" }}><b>AJP</b> </span>
+        <span className="brand-text font-weight-light">Admin <span className="badge bg-success">{process.env.appVersion}</span> </span>
       </a>
 
       <div className="sidebar">
@@ -30,10 +32,18 @@ const MenuContent = ({
         <nav className="mt-2">
           <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
             <li className="nav-item menu-open">
-              <Link to="/customer/catalog" className={`nav-link ${page === 'catalog' ? 'active' : ''}`}>
+              <Link to="/admin" className={`nav-link ${page === 'dashboard' ? 'active' : ''}`}>
                 <i className="nav-icon fas fa-tachometer-alt"></i>
                 <p>
-                  Catalog
+                  Dashboard
+                </p>
+              </Link>
+            </li>
+            <li className="nav-item menu-open">
+              <Link to="/admin/messages" className={`nav-link ${page === 'messages' ? 'active' : ''}`}>
+                <i className="nav-icon fas fa-envelope"></i>
+                <p>
+                  Messages
                 </p>
               </Link>
             </li>
