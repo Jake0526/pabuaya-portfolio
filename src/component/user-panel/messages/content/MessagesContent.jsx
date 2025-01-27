@@ -2,12 +2,40 @@
 import React, { useEffect, useState } from 'react';
 
 import { gql, useQuery, useMutation } from '@apollo/client';
+
 import { executeScript } from '../script/script.js';
 
+const messagesQuery = gql`
+query Messages {
+  messages {
+    _id
+    budget
+    targetCompletion
+    fullName
+    email
+    message
+    createdAt
+    createdBy
+    updatedAt
+    updatedBy
+  }
+}
+`;
+
 const MessagesContent = (props) => {
+  const [messages, setMessages] = useState([]);
+
+  const messagesResult = useQuery(messagesQuery, {
+    notifyOnNetworkStatusChange: true,
+    onCompleted(data) {
+      setMessages(data.messages);
+    },
+  });
+
   useEffect(() => {
-    executeScript();
-  }, []);
+    if (messages.length)
+      executeScript();
+  }, [messages]);
 
   return (
     <div className="content-wrapper">
@@ -41,7 +69,43 @@ const MessagesContent = (props) => {
                   </div>
                 </div>
                 <div className="card-body p-0">
-                  Welcome
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <table id="messages-table" className="table table-bordered table-hover">
+                        <thead>
+                          <tr>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                            <th>Budget</th>
+                            <th>Target of Completion</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {
+                            messages.map((message, i) => (
+                              <tr key={i}>
+                                <td>{message.fullName}</td>
+                                <td>{message.email}</td>
+                                <td>{message.message}</td>
+                                <td>{message.budget}</td>
+                                <td>{message.targetCompletion}</td>
+                              </tr>
+                            ))
+                          }
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                            <th>Budget</th>
+                            <th>Target of Completion</th>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

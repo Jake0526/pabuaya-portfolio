@@ -128,12 +128,7 @@ const LoginContent = ({
               </div>
             </div>
             <hr />
-            <p className="login-box-msg">Not Registered?</p>
-            <div className="row">
-              <div className="col-12">
-                <button type="submit" className="btn btn-success btn-block">Request a business account</button>
-              </div>
-            </div>
+            <p className="login-box-msg">Keep out</p>
           </form>
         </div>
       </div>

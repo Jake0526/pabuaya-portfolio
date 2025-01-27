@@ -9,8 +9,6 @@ const MenuContent = ({
 
   }, []);
 
-  console.log('process.env: ', process.env);
-
   return (
     <aside className="main-sidebar fixed sidebar-dark-primary elevation-4">
       <a href="/" className="brand-link">
