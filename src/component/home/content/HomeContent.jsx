@@ -204,6 +204,11 @@ const HomeContent = () => {
                       Experience
                     </a>
                   </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#education" data-toggle="tab">
+                      Education
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div className="card-body">
@@ -269,7 +274,7 @@ const HomeContent = () => {
                   </div>
                   <div className="tab-pane" id="experience">
                     <div className="timeline timeline-inverse">
-                    <div className="time-label">
+                      <div className="time-label">
                         <span className="bg-success">
                           Current
                         </span>
@@ -441,6 +446,13 @@ const HomeContent = () => {
                       </div>
                     </div>
                   </div>
+                  <div className="tab-pane" id="education">
+                    <div className="row" style={{textAlign: 'center'}}>
+                      <div className="col-12">
+                        B.S. in Information Technology from the University of Mindanao Davao City
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -449,7 +461,7 @@ const HomeContent = () => {
 
         <div className="work-section" id="work-section" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
           <div className="container">
-            <center> <h1><strong>WORK</strong></h1> </center>
+            <center> <h1><strong>WORKS</strong></h1> </center>
             
             <div className="row" style={{ paddingTop: '30px' }}>
               <div className="col-lg-6">
@@ -480,6 +492,7 @@ const HomeContent = () => {
                   <li>ReactJS</li>
                   <li>Kubernetes</li>
                   <li>MongoDB</li>
+                  <li>ExpressJS</li>
                   <li>GraphQL</li>
                   <li>Apollo Services</li>
                   <li>Apollo Client</li>
