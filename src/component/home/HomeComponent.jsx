@@ -54,17 +54,15 @@ export default class HomeComponent extends Component {
     document.title = "Welcome to AJP website"
 
     document.body.className = "hold-transition layout-top-nav layout-navbar-fixed";
-    document.body.style = `
-    height: auto;`;
   }
 
 	render() {
 		return (
-      <>
+      <div className="wrapper">
         <ApolloProvider client={client}>
           <HomeContent />
         </ApolloProvider>
-      </>
+      </div>
 		);
 	}
 };

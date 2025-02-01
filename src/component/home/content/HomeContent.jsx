@@ -1,11 +1,9 @@
 /* eslint-disable no-nested-ternary */
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useLayoutEffect } from 'react';
 import { gql, useQuery, useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 import { executeScript } from '../script/script.js';
 
@@ -21,7 +19,6 @@ mutation CreateMessage($input: InputMessage!) {
 
 const HomeContent = () => {
   useEffect(() => {
-    AOS.init();
     executeScript();
   }, []);
 
@@ -74,7 +71,7 @@ const HomeContent = () => {
 
 
   return (
-    <div className="wrapper">
+    <>
       <nav className="main-header navbar navbar-expand-md navbar-light navbar-white border-bottom-0">
         <div className="container">
           <a href="#" className="navbar-brand" style={{ color: '#ffffff', fontSize: '30px' }}>
@@ -469,7 +466,7 @@ const HomeContent = () => {
               <center> <h1><strong>WORKS</strong></h1> </center>
             </div>
             
-            <div className="row" style={{ paddingTop: '30px' }} data-aos="fade-left" data-aos-duration="1000">
+            <div className="row" style={{ paddingTop: '30px' }} data-aos="fade-right" data-aos-duration="1000" data-aos-offset="300">
               <div className="col-lg-6">
                 <div className="col-12">
                   <img src={rresidenceImage} className="product-image" alt="RResidence"/>
@@ -512,7 +509,7 @@ const HomeContent = () => {
               </div>
             </div>
 
-            <div className="row" style={{ paddingTop: '30px' }} data-aos="fade-right" data-aos-duration="1000">
+            <div className="row" style={{ paddingTop: '30px' }} data-aos="fade-right" data-aos-duration="1000" data-aos-offset="300">
               <div className="col-lg-6">
                 <h3 className="d-inline-block d-sm-none">City Government of Davao (HRMIS-ePays)</h3>
                 <div className="col-12">
@@ -543,7 +540,7 @@ const HomeContent = () => {
         </div>
 
         <div className="lets-build" id="lets-build" style={{ paddingTop: '50px', paddingBottom: '50px' }}>
-          <div className="container" data-aos="fade-left" data-aos-duration="1000">
+          <div className="container" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="500">
             <center> <h1><strong>LET'S BUILD SOMETHING</strong></h1> </center>
             <form className="grid-form" ref={sendMessage} onSubmit={handleSubmitSendMessage(onSubmitSendMessage, onSubmitSendMessageError)}>
               <div className="card">
@@ -668,7 +665,7 @@ const HomeContent = () => {
           </div>
         </div>
       </footer>
-    </div>
+    </>
   )
 };
 
