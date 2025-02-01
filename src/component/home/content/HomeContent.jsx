@@ -75,8 +75,8 @@ const HomeContent = () => {
       <nav className="main-header navbar navbar-expand-md navbar-light navbar-white border-bottom-0">
         <div className="container">
           <a href="#" className="navbar-brand" style={{ color: '#ffffff', fontSize: '30px' }}>
-            <span className="brand-image" style={{ marginTop: "5px", marginLeft: "15px" }}><b>W</b></span>
-            <span className="brand-text font-weight-light">elcome</span>
+            <span className="brand-image" style={{ marginTop: "5px", marginLeft: "15px" }}><b>AJP</b></span>
+            <span className="brand-text font-weight-light">Dev</span>
           </a>
 
           <button className="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" 
