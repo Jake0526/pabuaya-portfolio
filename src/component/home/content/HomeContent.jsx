@@ -4,6 +4,8 @@ import { gql, useQuery, useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import { executeScript } from '../script/script.js';
 
@@ -19,6 +21,7 @@ mutation CreateMessage($input: InputMessage!) {
 
 const HomeContent = () => {
   useEffect(() => {
+    AOS.init();
     executeScript();
   }, []);
 
@@ -136,11 +139,11 @@ const HomeContent = () => {
             <div className="container">
               <div className="row">
                 <div className="col-lg-6 col-sm-12" style={{paddingTop: '50px'}}>
-                  <div className="banner-home-title">Hi!</div>
-                  <div className="banner-home-content">
+                  <div className="banner-home-title" data-aos="fade-right" data-aos-duration="1000">Hi!</div>
+                  <div className="banner-home-content" data-aos="fade-left" data-aos-duration="1000">
                     My name is Alvin Jake Pabuaya
                   </div>
-                  <div style={{ fontSize: '20px', marginBottom: '30px'}}>I'm a full stack web developer specializing in building web applications using JavaScript, ReactJS, Node.js and Kubernetes</div>
+                  <div style={{ fontSize: '20px', marginBottom: '30px'}} data-aos="fade-left" data-aos-duration="1000">I'm a full stack web developer specializing in building web applications using JavaScript, ReactJS, Node.js and Kubernetes</div>
                   <a 
                     href="#about-me" 
                     className="btn btn-primary rounded-pill" 
@@ -149,11 +152,12 @@ const HomeContent = () => {
                       e.preventDefault(); // Prevent default anchor behavior
                       document.getElementById('about-me').scrollIntoView({ behavior: 'smooth' });
                     }}
+                    data-aos="fade-right" data-aos-duration="1000"
                   >
                     Find out more
                   </a>
                 </div>
-                <div className="col-lg-6 col-sm-12">
+                <div className="col-lg-6 col-sm-12" data-aos="fade-up" data-aos-duration="1000">
                   <img src="/images/jake.png" className="banner-home-image" />
                 </div>
               </div>
@@ -181,7 +185,7 @@ const HomeContent = () => {
         </div>
 
         <div className="about-me" id="about-me">
-          <div className="container">
+          <div className="container" data-aos="fade-in" data-aos-duration="1000" data-aos-offset="300">
             <center> <h1><strong>ABOUT</strong></h1> </center>
             <p style={{ fontSize: '20px' }}>
               I am a Full Stack Web Developer with 9+ years of experience in designing, developing, and maintaining robust and scalable web applications. Expertise in full-stack development, with a strong focus on cloud-native architectures. Proficient in Kubernetes for container orchestration and Git for efficient version control. Deep understanding of Single Sign-On (SSO) principles and hands-on experience with Hydra. Passionate about CI/CD best practices and implementing automated pipelines for streamlined software delivery.
@@ -211,7 +215,7 @@ const HomeContent = () => {
                   </li>
                 </ul>
               </div>
-              <div className="card-body">
+              <div className="card-body" data-aos="fade-right" data-aos-duration="1000">
                 <div className="tab-content">
                   <div className="active tab-pane" id="skills">
                     <div className="row">
@@ -461,9 +465,11 @@ const HomeContent = () => {
 
         <div className="work-section" id="work-section" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
           <div className="container">
-            <center> <h1><strong>WORKS</strong></h1> </center>
+            <div data-aos="fade-in" data-aos-duration="1000" data-aos-offset="300">
+              <center> <h1><strong>WORKS</strong></h1> </center>
+            </div>
             
-            <div className="row" style={{ paddingTop: '30px' }}>
+            <div className="row" style={{ paddingTop: '30px' }} data-aos="fade-left" data-aos-duration="1000">
               <div className="col-lg-6">
                 <div className="col-12">
                   <img src={rresidenceImage} className="product-image" alt="RResidence"/>
@@ -506,7 +512,7 @@ const HomeContent = () => {
               </div>
             </div>
 
-            <div className="row" style={{ paddingTop: '30px' }}>
+            <div className="row" style={{ paddingTop: '30px' }} data-aos="fade-right" data-aos-duration="1000">
               <div className="col-lg-6">
                 <h3 className="d-inline-block d-sm-none">City Government of Davao (HRMIS-ePays)</h3>
                 <div className="col-12">
@@ -537,7 +543,7 @@ const HomeContent = () => {
         </div>
 
         <div className="lets-build" id="lets-build" style={{ paddingTop: '50px', paddingBottom: '50px' }}>
-          <div className="container">
+          <div className="container" data-aos="fade-left" data-aos-duration="1000">
             <center> <h1><strong>LET'S BUILD SOMETHING</strong></h1> </center>
             <form className="grid-form" ref={sendMessage} onSubmit={handleSubmitSendMessage(onSubmitSendMessage, onSubmitSendMessageError)}>
               <div className="card">
