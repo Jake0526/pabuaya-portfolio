@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Set env
 ARG ENV_FILE
-RUN echo '$ENV_FILE' > .env
+RUN echo "$ENV_FILE" > .env
 
 # Copy package.json and package-lock.json
 COPY package*.json ./
