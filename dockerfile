@@ -1,6 +1,10 @@
 # Use an official Node.js runtime as the base image
 FROM node:18-alpine
 
+# Set env
+ARG ENV_FILE
+RUN echo "$ENV_FILE" > .env
+
 # Set the working directory inside the container
 WORKDIR /app
 
