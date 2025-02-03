@@ -5,10 +5,10 @@ import './App.css'
 import LoginRoute from "./middleware/LoginRoute";
 import ProtectedRoute from "./middleware/ProtectedRoute";
 
-import MessagesComponent from "./component/user-panel/messages/MessagesComponent";
-import DashboardComponent from "./component/user-panel/dashboard/DashboardComponent";
-import LoginComponent from "./component/login/LoginComponent";
-import HomePageComponent from "./component/home/HomeComponent";
+import MessagesComponent from "./component/user-panel/messages/MessagesComponent"
+import DashboardComponent from "./component/user-panel/dashboard/DashboardComponent"
+import LoginComponent from "./component/login/LoginComponent"
+import HomePageComponent from "./component/home/HomeComponent"
 
 function App() {
   return (
