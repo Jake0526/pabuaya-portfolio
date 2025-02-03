@@ -4,6 +4,10 @@ FROM node:18-alpine
 # Set the working directory inside the container
 WORKDIR /app
 
+# Set env
+ARG ENV_FILE
+RUN echo "$ENV_FILE" > .env
+
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
