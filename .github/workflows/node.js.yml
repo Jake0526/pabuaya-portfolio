@@ -3,7 +3,7 @@ name: Build, Push, and Deploy
 on:
   push:
     branches:
-      - main  # Trigger the workflow on push to the main branch
+      - master
 
 jobs:
   build-push-deploy:
