@@ -16,11 +16,14 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
 
+    - name: Set up env
+      run: echo "$ENV_FILE" > .env
+
     - name: Log in to Docker Hub
       run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
     - name: Build Docker image
-      run: docker build -t jake0526/pabuaya-portfolio:production . --build-arg ENV_FILE="${{ secrets.ENV_FILE }}"
+      run: docker build -t jake0526/pabuaya-portfolio:production .
 
     - name: Push Docker image
       run: docker push jake0526/pabuaya-portfolio:production
