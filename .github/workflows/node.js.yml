@@ -25,10 +25,10 @@ jobs:
     - name: Push Docker image
       run: docker push jake0526/pabuaya-portfolio:production
 
-    - name: Set up kubectl
-      uses: azure/setup-kubectl@v1
-      with:
-        version: 'v1.22.0'  # Specify the kubectl version you need
+    - name: Install Kustomize (v5.0.1)
+      run: |
+        curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash -s -- 5.0.1
+        sudo mv kustomize /usr/local/bin/kustomize
 
     - name: Configure kubeconfig
       run: |
