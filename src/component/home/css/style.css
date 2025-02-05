@@ -1,3 +1,8 @@
+
+.main-header {
+  background-color: rgba(11, 100, 119, 1);
+}
+
 @font-face {
   font-family: 'Noto Sans Tagalog';
   src: url("/fonts/Noto_Sans_Tagalog/NotoSansTagalog-Regular.ttf") format("truetype");
@@ -7,10 +12,6 @@
   font-family: "Noto Sans Tagalog", "Source Sans Pro";
   font-weight: 200;
   font-style: normal;
-}
-
-.main-header {
-  background-color: rgba(11, 100, 119, 1);
 }
 
 .banner-home {

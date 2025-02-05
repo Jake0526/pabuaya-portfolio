@@ -86,7 +86,8 @@ const HomeContent = () => {
         }
 
         const opacity = Math.min(offset / 500, 1);
-        header.style.offset = `rgba(33, 58, 87, ${opacity})`;
+        console.log('opacity: ', opacity);
+        header.style.backgroundColor = `rgba(33, 58, 87, ${opacity})`;
       } else if (offset >= 300) {
         const opacity = Math.min(300 / 300, 1);
         header.style.backgroundColor = `rgba(33, 58, 87, ${opacity})`;
