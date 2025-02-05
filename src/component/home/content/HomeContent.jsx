@@ -41,10 +41,23 @@ const HomeContent = () => {
   useEffect(() => {
     const header = document.querySelector('.main-header');
     if (offset < 60) {
+      if (isFlipped) {
+        setIsFlipped(false);
+        doFlip();
+
+        setTimeout(() => {
+          setBannerTitle([
+            "Hi!",
+            "My name is Alvin Jake Pabuaya",
+            "I'm a full stack web developer specializing in building web applications using JavaScript, ReactJS, Node.js and Kubernetes",
+          ])
+        }, 200);
+      }
+
       header.style.backgroundColor = `rgba(11, 100, 119, 1)`;
     } else {
       if (offset < 300) {
-        if (offset >= 80) {
+        if (offset > 80) {
           if (!isFlipped) {
             setIsFlipped(true);
             doFlip();
@@ -206,58 +219,32 @@ const HomeContent = () => {
                 <div 
                   className="col-lg-6 col-sm-12 noto-sans-tagalog-regular" 
                   style={{paddingTop: '50px'}}
+                  onClick={() => {
+                    if (isFlipped) {
+                      setIsFlipped(false);
+                      doFlip();
+
+                      setTimeout(() => {
+                        setBannerTitle([
+                          "Hi!",
+                          "My name is Alvin Jake Pabuaya",
+                          "I'm a full stack web developer specializing in building web applications using JavaScript, ReactJS, Node.js and Kubernetes",
+                        ])
+                      }, 200);
+                    }
+                  }}
                 >
                   <div
                     className="banner-home-title"
                     data-aos="fade-right"
                     data-aos-duration="1000"
-                    onMouseEnter={() => {
-                      if (isFlipped) {
-                        setIsFlipped(false);
-                        doFlip();
-  
-                        setTimeout(() => {
-                          setBannerTitle([
-                            "Hi!",
-                            "My name is Alvin Jake Pabuaya",
-                            "I'm a full stack web developer specializing in building web applications using JavaScript, ReactJS, Node.js and Kubernetes",
-                          ])
-                        }, 200);
-                      }
-                    }}
                   >
                     <div id="banner-text-1">{bannerTitle[0]}</div>
                   </div>
-                  <div className="banner-home-content banner-text" data-aos="fade-left" data-aos-duration="1000" onMouseEnter={() => {
-                    if (isFlipped) {
-                      setIsFlipped(false);
-                      doFlip();
-
-                      setTimeout(() => {
-                        setBannerTitle([
-                          "Hi!",
-                          "My name is Alvin Jake Pabuaya",
-                          "I'm a full stack web developer specializing in building web applications using JavaScript, ReactJS, Node.js and Kubernetes",
-                        ])
-                      }, 200);
-                    }
-                  }}>
+                  <div className="banner-home-content banner-text" data-aos="fade-left" data-aos-duration="1000">
                     <div id="banner-text-2">{bannerTitle[1]}</div>
                   </div>
-                  <div style={{ fontSize: '20px', marginBottom: '30px'}} data-aos="fade-left" data-aos-duration="1000" onMouseEnter={() => {
-                    if (isFlipped) {
-                      setIsFlipped(false);
-                      doFlip();
-
-                      setTimeout(() => {
-                        setBannerTitle([
-                          "Hi!",
-                          "My name is Alvin Jake Pabuaya",
-                          "I'm a full stack web developer specializing in building web applications using JavaScript, ReactJS, Node.js and Kubernetes",
-                        ])
-                      }, 200);
-                    }
-                  }}>
+                  <div style={{ fontSize: '20px', marginBottom: '30px'}} data-aos="fade-left" data-aos-duration="1000">
                     <div id="banner-text-3">{bannerTitle[2]}</div>
                   </div>
                   <a 
