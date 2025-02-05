@@ -18,9 +18,68 @@ mutation CreateMessage($input: InputMessage!) {
 `;
 
 const HomeContent = () => {
+  const [bannerTitle, setBannerTitle] = useState([
+    "Hi!",
+    "My name is Alvin Jake Pabuaya",
+    "I'm a full stack web developer specializing in building web applications using JavaScript, ReactJS, Node.js and Kubernetes",
+  ]);
+  const [offset, setOffset] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
+
   useEffect(() => {
     executeScript();
+
+    // ~~~~~~~~~~~~~~~~~~~~~~~~ Scroll ~~~~~~~~~~~~~~~~~~~~~~~~
+    const onScroll = () => setOffset(window.scrollY);
+
+    window.removeEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+    // ~~~~~~~~~~~~~~~~~~~~~~~~ Scroll ~~~~~~~~~~~~~~~~~~~~~~~~
   }, []);
+
+  useEffect(() => {
+    const header = document.querySelector('.main-header');
+    if (offset < 60) {
+      header.style.backgroundColor = `rgba(11, 100, 119, 1)`;
+    } else {
+      if (offset < 300) {
+        if (offset >= 80) {
+          if (!isFlipped) {
+            setIsFlipped(true);
+            doFlip();
+
+            setTimeout(() => {
+              setBannerTitle([
+                "ᜋᜊᜓᜑᜌ᜔!",
+                "ᜀᜅ᜔ ᜉᜅᜎᜈ᜔ ᜃᜓ︀ ᜀᜌ᜔ Alvin Jake Pabuaya",
+                "ᜁᜐ ᜀᜃᜓ︀ᜅ᜔ full stack web developer ᜈ ᜇᜎᜓᜊ᜔ᜑᜐ ᜐ ᜉᜄ᜔ᜊᜓᜂ ᜅ᜔ ᜋ᜔ᜄ web applications ᜄᜋᜒᜆ᜔ ᜀᜅ᜔ JavaScript, ReactJS, Node.js and Kubernetes",
+              ])
+            }, 200);
+          }
+        } else {
+          if (isFlipped) {
+            setIsFlipped(false);
+            doFlip();
+
+            setTimeout(() => {
+              setBannerTitle([
+                "Hi!",
+                "My name is Alvin Jake Pabuaya",
+                "I'm a full stack web developer specializing in building web applications using JavaScript, ReactJS, Node.js and Kubernetes",
+              ])
+            }, 200);
+          }
+        }
+
+        const opacity = Math.min(offset / 500, 1);
+        header.style.offset = `rgba(33, 58, 87, ${opacity})`;
+      } else if (offset >= 300) {
+        const opacity = Math.min(300 / 300, 1);
+        header.style.backgroundColor = `rgba(33, 58, 87, ${opacity})`;
+      }
+    }
+  }, [offset]);
 
   const [createMessagesMutation, createMessagesResult] = useMutation(createMessagesQuery);
 
@@ -68,6 +127,15 @@ const HomeContent = () => {
     console.log("Error Insert");
     console.log(error);
   };
+
+  const doFlip = () => {
+    const doc1 = document.querySelector('#banner-text-1');
+    const doc2 = document.querySelector('#banner-text-2');
+    const doc3 = document.querySelector('#banner-text-3');
+    doc1.classList.toggle('flipped');
+    doc2.classList.toggle('flipped');
+    doc3.classList.toggle('flipped');
+  }
 
 
   return (
@@ -135,12 +203,63 @@ const HomeContent = () => {
           <div className="content">
             <div className="container">
               <div className="row">
-                <div className="col-lg-6 col-sm-12" style={{paddingTop: '50px'}}>
-                  <div className="banner-home-title" data-aos="fade-right" data-aos-duration="1000">Hi!</div>
-                  <div className="banner-home-content" data-aos="fade-left" data-aos-duration="1000">
-                    My name is Alvin Jake Pabuaya
+                <div 
+                  className="col-lg-6 col-sm-12 noto-sans-tagalog-regular" 
+                  style={{paddingTop: '50px'}}
+                >
+                  <div
+                    className="banner-home-title"
+                    data-aos="fade-right"
+                    data-aos-duration="1000"
+                    onMouseEnter={() => {
+                      if (isFlipped) {
+                        setIsFlipped(false);
+                        doFlip();
+  
+                        setTimeout(() => {
+                          setBannerTitle([
+                            "Hi!",
+                            "My name is Alvin Jake Pabuaya",
+                            "I'm a full stack web developer specializing in building web applications using JavaScript, ReactJS, Node.js and Kubernetes",
+                          ])
+                        }, 200);
+                      }
+                    }}
+                  >
+                    <div id="banner-text-1">{bannerTitle[0]}</div>
                   </div>
-                  <div style={{ fontSize: '20px', marginBottom: '30px'}} data-aos="fade-left" data-aos-duration="1000">I'm a full stack web developer specializing in building web applications using JavaScript, ReactJS, Node.js and Kubernetes</div>
+                  <div className="banner-home-content banner-text" data-aos="fade-left" data-aos-duration="1000" onMouseEnter={() => {
+                    if (isFlipped) {
+                      setIsFlipped(false);
+                      doFlip();
+
+                      setTimeout(() => {
+                        setBannerTitle([
+                          "Hi!",
+                          "My name is Alvin Jake Pabuaya",
+                          "I'm a full stack web developer specializing in building web applications using JavaScript, ReactJS, Node.js and Kubernetes",
+                        ])
+                      }, 200);
+                    }
+                  }}>
+                    <div id="banner-text-2">{bannerTitle[1]}</div>
+                  </div>
+                  <div style={{ fontSize: '20px', marginBottom: '30px'}} data-aos="fade-left" data-aos-duration="1000" onMouseEnter={() => {
+                    if (isFlipped) {
+                      setIsFlipped(false);
+                      doFlip();
+
+                      setTimeout(() => {
+                        setBannerTitle([
+                          "Hi!",
+                          "My name is Alvin Jake Pabuaya",
+                          "I'm a full stack web developer specializing in building web applications using JavaScript, ReactJS, Node.js and Kubernetes",
+                        ])
+                      }, 200);
+                    }
+                  }}>
+                    <div id="banner-text-3">{bannerTitle[2]}</div>
+                  </div>
                   <a 
                     href="#about-me" 
                     className="btn btn-primary rounded-pill" 

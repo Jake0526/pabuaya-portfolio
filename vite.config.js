@@ -11,6 +11,9 @@ export default ({ mode }) => {
       'process.env': {
         appVersion: process.env.appVersion
       }
-    }
+    },
+    test: {
+      environment: 'jsdom',
+    },
   });
 }

@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'Noto Sans Tagalog';
+  src: url("http://localhost:3000/fonts/Noto_Sans_Tagalog/NotoSansTagalog-Regular.ttf") format("truetype");
+}
+
+.noto-sans-tagalog-regular {
+  font-family: "Noto Sans Tagalog", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.main-header {
+  background-color: rgba(11, 100, 119, 1);
+}
+
 .banner-home {
   padding-top: 200px;
   background-color: #0b6477;
@@ -89,6 +104,31 @@ a.nav-link.btn.btn-outline-light.rounded-pill:hover {
   display: flex;
   justify-content: center;
   gap: 10px; /* Adds space between the tabs */
+}
+
+.flipped {
+  transform: rotateY(360deg);
+}
+
+#banner-text-1 {
+  cursor: pointer;
+  display: inline-block !important;
+  transition: transform 0.6s;
+  transform-origin: center;
+}
+
+#banner-text-2 {
+  cursor: pointer;
+  display: inline-block !important;
+  transition: transform 0.6s;
+  transform-origin: center;
+}
+
+#banner-text-3 {
+  cursor: pointer;
+  display: inline-block !important;
+  transition: transform 0.6s;
+  transform-origin: center;
 }
 
 @media only screen and (max-width: 1000px) {
