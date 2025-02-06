@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es6", // or esnext, depending on your needs
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es6" // or es5, etc. to match 'target'
+    ],
+    "allowJs": true, // Important: Allows gradual migration
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true, // Recommended for catching errors early
+    "forceConsistentCasingInFileNames": true,
+    "module": "es6",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src" // Or wherever your code is
+  ]
+}

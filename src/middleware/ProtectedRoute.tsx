@@ -16,12 +16,6 @@ export default class ProtectedRoute extends Component {
   }
 
   componentDidMount = async () => {
-    document.body.style = `
-    background-image: url(images/r-residencia.jpg); 
-    background-position: center; 
-    background-repeat: no-repeat;
-    background-size: cover;`;
-
     const isLoginResponse = await axios.post('/is-login', {
       headers: {
         'Content-Type': 'application/json',

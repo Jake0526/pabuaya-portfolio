@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import LoginContent from './content/LoginContent';
 
 export default class LoginComponent extends Component {
-	constructor(props) {
+	constructor(props: any) {
     super(props);
   }
 
@@ -16,20 +16,18 @@ export default class LoginComponent extends Component {
     // background-position: center; 
     // background-repeat: no-repeat;
     // background-size: cover;`;
-    document.body.style = `
-    background-color: #0b6477;
-    background-position: center; 
-    background-repeat: no-repeat;
-    background-size: cover;`;
+    document.body.setAttribute('style', `
+      background-color: #0b6477;
+      background-position: center; 
+      background-repeat: no-repeat;
+      background-size: cover;`);
   }
 
 	render() {
 		return (
-      <>
-        <div className="login-box">
-          <LoginContent />
-        </div>
-      </>
+      <div className="login-box">
+        <LoginContent />
+      </div>
 		);
 	}
 };
