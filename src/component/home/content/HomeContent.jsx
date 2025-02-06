@@ -272,16 +272,16 @@ const HomeContent = () => {
         <div className="supplier-home">
           <div className="container">
             <div className="row">
-              <div className="col-md-3 image-supplier-container">
+              <div className="col-md-4 image-supplier-container">
                 {/* <img src="/images/partners/doh.png" width="100" alt="Image 1" /> */}
               </div>
-              <div className="col-md-3 image-supplier-container">
+              {/* <div className="col-md-3 image-supplier-container">
                 <img src="/images/citygov.png" width="100" alt="Image 2" className="grayscale-image" />
-              </div>
-              <div className="col-md-3 image-supplier-container">
+              </div> */}
+              <div className="col-md-4 image-supplier-container">
                 <img src="/images/r-residencia-logo.png" width="100" alt="Image 3" className="grayscale-image" />
               </div>
-              <div className="col-md-3 image-supplier-container">
+              <div className="col-md-4 image-supplier-container">
                 {/* <img src="/images/partners/doh.png" width="100" alt="Image 1" /> */}
               </div>
             </div>   
@@ -616,7 +616,7 @@ const HomeContent = () => {
               </div>
             </div>
 
-            <div className="row" style={{ paddingTop: '30px' }} data-aos="fade-right" data-aos-duration="1000" data-aos-offset="300">
+            {/* <div className="row" style={{ paddingTop: '30px' }} data-aos="fade-right" data-aos-duration="1000" data-aos-offset="300">
               <div className="col-lg-6">
                 <h3 className="d-inline-block d-sm-none">City Government of Davao (HRMIS-ePays)</h3>
                 <div className="col-12">
@@ -642,7 +642,7 @@ const HomeContent = () => {
                   <li>Apollo Client</li>
                 </ul> 
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
