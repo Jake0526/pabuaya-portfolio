@@ -272,16 +272,16 @@ const HomeContent = () => {
         <div className="supplier-home">
           <div className="container">
             <div className="row">
-              <div className="col-md-4 image-supplier-container">
+              <div className="col-md-3 image-supplier-container">
                 {/* <img src="/images/partners/doh.png" width="100" alt="Image 1" /> */}
               </div>
-              {/* <div className="col-md-3 image-supplier-container">
+              <div className="col-md-3 image-supplier-container">
                 <img src="/images/citygov.png" width="100" alt="Image 2" className="grayscale-image" />
-              </div> */}
-              <div className="col-md-4 image-supplier-container">
+              </div>
+              <div className="col-md-3 image-supplier-container">
                 <img src="/images/r-residencia-logo.png" width="100" alt="Image 3" className="grayscale-image" />
               </div>
-              <div className="col-md-4 image-supplier-container">
+              <div className="col-md-3 image-supplier-container">
                 {/* <img src="/images/partners/doh.png" width="100" alt="Image 1" /> */}
               </div>
             </div>   
