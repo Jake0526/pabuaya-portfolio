@@ -4,7 +4,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache, ApolloLink } from '@apollo
 import { HttpLink } from 'apollo-link-http';
 import CryptoJS from 'crypto-js';
 
-import HomeContent from './content/HomeContent.jsx';
+import HomeContent from './content/HomeContent';
 
 import { executeScript } from './script/script.js';
 

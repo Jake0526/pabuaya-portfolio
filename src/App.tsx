@@ -8,6 +8,7 @@ import ProtectedRoute from "./middleware/ProtectedRoute";
 import MessagesComponent from "./component/user-panel/messages/MessagesComponent"
 import DashboardComponent from "./component/user-panel/dashboard/DashboardComponent"
 import LoginComponent from "./component/login/LoginComponent"
+import TimeTravelComponent from "./component/timetravel/TimeTravelComponent"
 import HomePageComponent from "./component/home/HomeComponent"
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path='/admin/messages' element={<ProtectedRoute Element={MessagesComponent} />} />
         <Route path='/admin' element={<ProtectedRoute Element={DashboardComponent} />} />
         <Route path='/login' element={<LoginRoute Element={LoginComponent} />} />
+        <Route path="/project/timetravel" element={<TimeTravelComponent />} />
         <Route path="/" element={<HomePageComponent />} />
       </Routes>
     </BrowserRouter>

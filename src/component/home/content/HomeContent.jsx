@@ -29,6 +29,20 @@ const HomeContent = () => {
   useEffect(() => {
     executeScript();
 
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const pageto = urlParams.get('pageto')
+
+    setTimeout(() => {
+      if (pageto === 'about-me') {
+        document.getElementById('about-me').scrollIntoView({ behavior: 'smooth' });
+      } else if (pageto === 'work-section') {
+        document.getElementById('work-section').scrollIntoView({ behavior: 'smooth' });
+      } else if (pageto === 'lets-build') {
+        document.getElementById('lets-build').scrollIntoView({ behavior: 'smooth' });
+      }
+     }, 200)
+
     // ~~~~~~~~~~~~~~~~~~~~~~~~ Scroll ~~~~~~~~~~~~~~~~~~~~~~~~
     const onScroll = () => setOffset(window.scrollY);
 
@@ -181,7 +195,7 @@ const HomeContent = () => {
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <a href="#banner-home" className="nav-link" style={{ color: '#ffffff' }} onClick={(e) => {
-                  e.preventDefault(); // Prevent default anchor behavior
+                  e.preventDefault();
                   document.getElementById('banner-home').scrollIntoView({ behavior: 'smooth' });
                 }}>Home</a>
               </li>
