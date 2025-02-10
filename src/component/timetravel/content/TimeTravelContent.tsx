@@ -17,6 +17,7 @@ const TimeTravelContent = () => {
       });
     }
   }, [])
+
   return (
     <>
       <nav className="main-header navbar navbar-expand-md navbar-light navbar-white border-bottom-0">
@@ -34,7 +35,7 @@ const TimeTravelContent = () => {
           <div className="collapse navbar-collapse order-3" id="navbarCollapse" style={{ color: '#ffffff', fontSize: '20px' }}>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <a href="/?pageto=banner-home" className="nav-link" style={{ color: '#ffffff' }}>Home</a>
+                <a href="/" className="nav-link" style={{ color: '#ffffff' }}>Home</a>
               </li>
               <li className="nav-item">
                 <a href="/?pageto=about-me" className="nav-link" style={{ color: '#ffffff' }}>About</a>
@@ -51,7 +52,7 @@ const TimeTravelContent = () => {
       </nav>
 
       <div className="content-wrapper">
-        <div className="content-header">
+        <div className="content-header" style={{paddingTop: '50px'}}>
           <div className="container">
             <div className="row mb-2">
               <div className="col-sm-6">

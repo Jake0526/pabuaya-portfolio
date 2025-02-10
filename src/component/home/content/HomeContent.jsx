@@ -657,6 +657,46 @@ const HomeContent = () => {
                 </ul> 
               </div>
             </div> */}
+
+            <div data-aos="fade-in" data-aos-duration="1000" data-aos-offset="300">
+              <center> <h1><strong>Personal Projects</strong></h1> </center>
+            </div>
+
+            <div className="row" style={{ paddingTop: '30px' }} data-aos="fade-right" data-aos-duration="1000" data-aos-offset="300">
+              <div className="col-lg-6">
+                <div className="col-12">
+                  <img src='/images/work/timetravel-sample.jpg' className="product-image" alt="TimeTravel"/>
+                </div>
+                <div className="col-12 product-image-thumbs">
+                  <div className="product-image-thumb">
+                    <img src="/images/work/timetravel-sample.jpg" alt="Product Image"/>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6">
+                <h3 className="my-3">Time Travel Davao</h3>
+                <p>Time Travel Davao aims to provide an image repository of historical photos throughout Davao's history. Aside from web development, history is also part of my hobby, and as a Dabawenyo, I would like to contribute by working on this small project. Soon, this project will also include a map interface where historical photos will be pinned on the map, making it more interactive.</p>
+
+                <hr/>
+                <h4>Development Tools</h4>
+                <ul>
+                  <li>ReactJS</li>
+                  <li>Vite/Vite-Express</li>
+                  <li>Kubernetes</li>
+                  <li>MongoDB</li>
+                  <li>ExpressJS</li>
+                  <li>GraphQL</li>
+                  <li>Apollo Services</li>
+                  <li>Apollo Client</li>
+                </ul>
+
+                <div className="mt-4 product-share">
+                  <a href="http://rresidenciadavao.com/" target="_blank" className="text-gray">
+                    View Project
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
