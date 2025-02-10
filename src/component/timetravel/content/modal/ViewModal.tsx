@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 
-const ViewModal = () => {
+interface ViewModalInterface {
+  image1: string;
+  image2: string;
+}
+
+const ViewModal = (images: ViewModalInterface) => {
   const [opacity, setOpacity] = useState(1); 
 
   useEffect(() => {
@@ -30,8 +35,8 @@ const ViewModal = () => {
               }} />
               <br />
               <div style={{position: 'relative'}}>
-                  <img id="photo1" src="/images/timetravel/sta-ana/sta-ana-now.jpg" alt="sta-ana-now" style={{width: '100%'}} />
-                  <img id="photo2" src="/images/timetravel/sta-ana/sta-ana-old.jpg" alt="sta-ana-old" style={{position: 'absolute', top: '0', left: 0, width: '100%', opacity: '1'}} />
+                  <img id="photo1" src={images.image1} alt="now" style={{width: '100%'}} />
+                  <img id="photo2" src={images.image2} alt="old" style={{position: 'absolute', top: '0', left: 0, width: '100%', opacity: '1'}} />
               </div>
             </div>
             <div className="modal-footer justify-content-between">

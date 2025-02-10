@@ -4,6 +4,9 @@ import ViewModal from './modal/ViewModal';
 import '../css/style.css';
 
 const TimeTravelContent = () => {
+  const [image1, setImage1] = useState('');
+  const [image2, setImage2] = useState(''); 
+
   useEffect(() => {
     if (!$.fn.dataTable.isDataTable('#messages-table')) {
       $('#messages-table').DataTable({
@@ -97,12 +100,40 @@ const TimeTravelContent = () => {
                           </thead>
                           <tbody>
                             <tr>
-                              <td>Santa Ana Warf</td>
+                              <td>Santa Ana Warf, Davao City</td>
                               <td></td>
                               <td>1930-1940</td>
                               <td></td>
                               <td>
                                 <button className="btn btn-primary" onClick={() => {
+                                  setImage1('/images/timetravel/sta-ana/sta-ana-now.jpg');
+                                  setImage2('/images/timetravel/sta-ana/sta-ana-old.jpg');
+                                  $('#view-modal').modal('show');
+                                }}>View</button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Downtown, Davao City</td>
+                              <td></td>
+                              <td>1942</td>
+                              <td></td>
+                              <td>
+                                <button className="btn btn-primary" onClick={() => {
+                                  setImage1('/images/timetravel/downtown/downtown-now.jpg');
+                                  setImage2('/images/timetravel/downtown/downtown-old.jpg');
+                                  $('#view-modal').modal('show');
+                                }}>View</button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>City Hall of Davao</td>
+                              <td></td>
+                              <td>1946</td>
+                              <td></td>
+                              <td>
+                                <button className="btn btn-primary" onClick={() => {
+                                  setImage1('/images/timetravel/cityhall/city-hall-now.jpg');
+                                  setImage2('/images/timetravel/cityhall/city-hall-old.jpg');
                                   $('#view-modal').modal('show');
                                 }}>View</button>
                               </td>
@@ -147,7 +178,7 @@ const TimeTravelContent = () => {
         </div>
       </footer>
 
-      <ViewModal />
+      <ViewModal image1={image1} image2={image2} />
     </>
   )
 }

@@ -691,7 +691,7 @@ const HomeContent = () => {
                 </ul>
 
                 <div className="mt-4 product-share">
-                  <a href="/project/timetravel" target="_blank" className="text-gray">
+                  <a href="/project/timetravel" className="text-gray">
                     View Project
                   </a>
                 </div>
