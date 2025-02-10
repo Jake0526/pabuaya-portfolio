@@ -658,7 +658,7 @@ const HomeContent = () => {
               </div>
             </div> */}
 
-            <div data-aos="fade-in" data-aos-duration="1000" data-aos-offset="300">
+            <div data-aos="fade-in" data-aos-duration="1000" data-aos-offset="300" style={{paddingTop: '50px'}}>
               <center> <h1><strong>Personal Projects</strong></h1> </center>
             </div>
 
@@ -691,7 +691,7 @@ const HomeContent = () => {
                 </ul>
 
                 <div className="mt-4 product-share">
-                  <a href="http://rresidenciadavao.com/" target="_blank" className="text-gray">
+                  <a href="/project/timetravel" target="_blank" className="text-gray">
                     View Project
                   </a>
                 </div>
