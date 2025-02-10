@@ -127,7 +127,7 @@ const TimeTravelContent = () => {
                             </tr>
                             <tr>
                               <td>City Hall of Davao</td>
-                              <td></td>
+                              <td>After math of WW2 Bombing</td>
                               <td>1946</td>
                               <td></td>
                               <td>
