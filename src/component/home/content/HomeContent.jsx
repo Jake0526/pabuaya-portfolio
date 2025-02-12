@@ -317,13 +317,13 @@ const HomeContent = () => {
               <div className="card-header p-2">
                 <ul className="nav nav-pills d-flex justify-content-center">
                   <li className="nav-item">
-                    <a className="nav-link active" href="#skills" data-toggle="tab">
-                      Skills
+                    <a className="nav-link active" href="#experience" data-toggle="tab">
+                      Experience
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#experience" data-toggle="tab">
-                      Experience
+                    <a className="nav-link" href="#skills" data-toggle="tab">
+                      Skills
                     </a>
                   </li>
                   <li className="nav-item">
@@ -335,66 +335,7 @@ const HomeContent = () => {
               </div>
               <div className="card-body" data-aos="fade-right" data-aos-duration="1000">
                 <div className="tab-content">
-                  <div className="active tab-pane" id="skills">
-                    <div className="row">
-                      <div className="col-6 col-md-3 text-center">
-                        <input type="text" className="knob" value="90" data-width="100" data-height="100" data-fgColor="#3c8dbc"/>
-
-                        <div className="knob-label">Javascript</div>
-                      </div>
-                      <div className="col-6 col-md-3 text-center">
-                        <input type="text" className="knob" value="80" data-width="100" data-height="100" data-fgColor="#f56954"/>
-
-                        <div className="knob-label">NodeJS</div>
-                      </div>
-                      <div className="col-6 col-md-3 text-center">
-                        <input type="text" className="knob" value="80" data-width="100" data-height="100" data-fgColor="#00a65a"/>
-
-                        <div className="knob-label">ReactJS</div>
-                      </div>
-                      <div className="col-6 col-md-3 text-center">
-                        <input type="text" className="knob" value="80" data-width="100" data-height="100" data-fgColor="#00c0ef"/>
-
-                        <div className="knob-label">MySQL</div>
-                      </div>
-                      <div className="col-6 col-md-3 text-center">
-                        <input type="text" className="knob" value="80" data-width="100" data-height="100" data-fgColor="#00c0ef"/>
-
-                        <div className="knob-label">Kubernetes</div>
-                      </div>
-                      <div className="col-6 col-md-3 text-center">
-                        <input type="text" className="knob" value="100" data-width="100" data-height="100" data-fgColor="#3c8dbc"/>
-
-                        <div className="knob-label">Apollo Client</div>
-                      </div>
-                      <div className="col-6 col-md-3 text-center">
-                        <input type="text" className="knob" value="90" data-width="100" data-height="100" data-fgColor="#f56954"/>
-
-                        <div className="knob-label">Ory (Oauth2)</div>
-                      </div>
-                      <div className="col-6 col-md-3 text-center">
-                        <input type="text" className="knob" value="100" data-width="100" data-height="100" data-fgColor="#00a65a"/>
-
-                        <div className="knob-label">HTML/CSS</div>
-                      </div>
-                      <div className="col-6 col-md-3 text-center">
-                        <input type="text" className="knob" value="90" data-width="100" data-height="100" data-fgColor="#00a65a"/>
-
-                        <div className="knob-label">GitLab</div>
-                      </div>
-                      <div className="col-6 col-md-3 text-center">
-                        <input type="text" className="knob" value="100" data-width="100" data-height="100" data-fgColor="#00c0ef"/>
-
-                        <div className="knob-label">Apollo GraphQL</div>
-                      </div>
-                      <div className="col-6 col-md-3 text-center">
-                        <input type="text" className="knob" value="80" data-width="100" data-height="100" data-fgColor="#3c8dbc"/>
-
-                        <div className="knob-label">MeteorJS</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="tab-pane" id="experience">
+                  <div className="active tab-pane" id="experience">
                     <div className="timeline timeline-inverse">
                       <div className="time-label">
                         <span className="bg-success">
@@ -565,6 +506,65 @@ const HomeContent = () => {
                         <span className="bg-success">
                           May 2015
                         </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="tab-pane" id="skills">
+                    <div className="row">
+                      <div className="col-6 col-md-3 text-center">
+                        <input type="text" className="knob" value="90" data-width="100" data-height="100" data-fgColor="#3c8dbc"/>
+
+                        <div className="knob-label">Javascript</div>
+                      </div>
+                      <div className="col-6 col-md-3 text-center">
+                        <input type="text" className="knob" value="80" data-width="100" data-height="100" data-fgColor="#f56954"/>
+
+                        <div className="knob-label">NodeJS</div>
+                      </div>
+                      <div className="col-6 col-md-3 text-center">
+                        <input type="text" className="knob" value="80" data-width="100" data-height="100" data-fgColor="#00a65a"/>
+
+                        <div className="knob-label">ReactJS</div>
+                      </div>
+                      <div className="col-6 col-md-3 text-center">
+                        <input type="text" className="knob" value="80" data-width="100" data-height="100" data-fgColor="#00c0ef"/>
+
+                        <div className="knob-label">MySQL</div>
+                      </div>
+                      <div className="col-6 col-md-3 text-center">
+                        <input type="text" className="knob" value="80" data-width="100" data-height="100" data-fgColor="#00c0ef"/>
+
+                        <div className="knob-label">Kubernetes</div>
+                      </div>
+                      <div className="col-6 col-md-3 text-center">
+                        <input type="text" className="knob" value="100" data-width="100" data-height="100" data-fgColor="#3c8dbc"/>
+
+                        <div className="knob-label">Apollo Client</div>
+                      </div>
+                      <div className="col-6 col-md-3 text-center">
+                        <input type="text" className="knob" value="90" data-width="100" data-height="100" data-fgColor="#f56954"/>
+
+                        <div className="knob-label">Ory (Oauth2)</div>
+                      </div>
+                      <div className="col-6 col-md-3 text-center">
+                        <input type="text" className="knob" value="100" data-width="100" data-height="100" data-fgColor="#00a65a"/>
+
+                        <div className="knob-label">HTML/CSS</div>
+                      </div>
+                      <div className="col-6 col-md-3 text-center">
+                        <input type="text" className="knob" value="90" data-width="100" data-height="100" data-fgColor="#00a65a"/>
+
+                        <div className="knob-label">GitLab</div>
+                      </div>
+                      <div className="col-6 col-md-3 text-center">
+                        <input type="text" className="knob" value="100" data-width="100" data-height="100" data-fgColor="#00c0ef"/>
+
+                        <div className="knob-label">Apollo GraphQL</div>
+                      </div>
+                      <div className="col-6 col-md-3 text-center">
+                        <input type="text" className="knob" value="80" data-width="100" data-height="100" data-fgColor="#3c8dbc"/>
+
+                        <div className="knob-label">MeteorJS</div>
                       </div>
                     </div>
                   </div>
