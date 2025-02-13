@@ -274,6 +274,16 @@ const HomeContent = () => {
                   >
                     Find out more
                   </a>
+
+                  <a 
+                    href="https://buymeacoffee.com/ajpdev" 
+                    target="_blank"
+                    className="btn btn-outline-info rounded-pill" 
+                    style={{ color: '#ffffff', fontSize: '20px', padding: '20px' , marginLeft: '10px'}}
+                    data-aos="fade-right" data-aos-duration="1000"
+                  >
+                    Buy me a coffee
+                  </a>
                 </div>
                 <div className="col-lg-6 col-sm-12" data-aos="fade-up" data-aos-duration="1000">
                   <img src="/images/jake.png" className="banner-home-image" />

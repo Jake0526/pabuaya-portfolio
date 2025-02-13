@@ -6,6 +6,10 @@ import $ from "jquery";
 import { useForm } from "react-hook-form";
 
 const LoginContent = () => {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const redirectTo = urlParams.get('redirect')
+  
   useEffect(() => {
     $(document).ready(function() {
       $('.card-fade').addClass('show');
@@ -48,7 +52,11 @@ const LoginContent = () => {
           title: 'Incorrect username or password.'
         })
       } else {
-        window.location.href = '/admin';
+        if (redirectTo) {
+          window.location.href = redirectTo;
+        } else {
+          window.location.href = '/admin';
+        }
       }
     } catch (error) {
       var Toast = Swal.mixin({

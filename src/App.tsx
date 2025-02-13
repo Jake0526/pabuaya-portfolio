@@ -10,6 +10,7 @@ import DashboardComponent from "./component/user-panel/dashboard/DashboardCompon
 import LoginComponent from "./component/login/LoginComponent"
 import TimeTravelComponent from "./component/timetravel/TimeTravelComponent"
 import HomePageComponent from "./component/home/HomeComponent"
+import RealtimeChatComponent from './component/realtime-chat/RealtimeChatComponent';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/admin/messages' element={<ProtectedRoute Element={MessagesComponent} />} />
         <Route path='/admin' element={<ProtectedRoute Element={DashboardComponent} />} />
         <Route path='/login' element={<LoginRoute Element={LoginComponent} />} />
+        <Route path="/project/realtime-chat" element={<ProtectedRoute Element={RealtimeChatComponent} afterLogin="/project/realtime-chat" />} />
         <Route path="/project/timetravel" element={<TimeTravelComponent />} />
         <Route path="/" element={<HomePageComponent />} />
       </Routes>

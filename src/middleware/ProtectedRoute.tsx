@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class ProtectedRoute extends Component {
-  constructor(props) {
+  constructor({props}) {
     super(props);
 
     this.state = {
@@ -33,7 +33,7 @@ export default class ProtectedRoute extends Component {
         clientType: isLoginResponse.data.session[4],
       });
     }else {
-      window.location.href = '/login';
+      window.location.href = `/login${this.props.afterLogin ? '?redirect=' + encodeURIComponent(this.props.afterLogin) : ''}`;
     }
   }
 

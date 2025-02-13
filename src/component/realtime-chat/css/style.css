@@ -1,0 +1,25 @@
+/* .content-wrapper {
+  margin-top: 4.5rem !important;
+} */
+
+.content-header {
+  padding: 15px .5rem;
+}
+
+.chat-list {
+  margin-top: 10px;
+}
+
+.chat-list img {
+  margin-right: 10px;
+}
+
+.card-body.user-list {
+  height: 600px;
+  overflow-y: auto;
+}
+
+.card-body.chat-content {
+  height: 563px;
+  overflow-y: auto;
+}
