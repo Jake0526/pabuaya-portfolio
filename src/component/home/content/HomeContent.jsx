@@ -554,7 +554,7 @@ const HomeContent = () => {
                       <div className="col-6 col-md-3 text-center">
                         <input type="text" className="knob" value="90" data-width="100" data-height="100" data-fgColor="#f56954"/>
 
-                        <div className="knob-label">Ory (Oauth2)</div>
+                        <div className="knob-label">Ory (IAM and SSO)</div>
                       </div>
                       <div className="col-6 col-md-3 text-center">
                         <input type="text" className="knob" value="100" data-width="100" data-height="100" data-fgColor="#00a65a"/>
